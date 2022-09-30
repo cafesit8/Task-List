@@ -1,27 +1,50 @@
-const icon = document.querySelectorAll('#boton')
-const span = document.querySelectorAll('span')
+const lista = document.querySelector(".lista");
+const input = document.getElementById("input");
+const btnAgregar = document.querySelector(".plus");
 
-function todosIconos(){
-    const changeIcon=(id)=>{
-        boton[id].classList.toggle('active')
-        botom = boton[id]
+btnAgregar.addEventListener("click", () => {
+  const inputTexto = input.value;
+  if (inputTexto !== "" && inputTexto.length < 45) {
+    const li = document.createElement("li");
+    li.className = 'animate__animated animate__fadeInDown animate__faster'
+    const texto = document.createElement("p");
+    texto.className = 'texto'
+    texto.textContent = inputTexto;
+    lista.appendChild(li);
+    li.appendChild(tacharTarea());
+    li.appendChild(texto);
+    li.appendChild(Eliminar())
+    input.value = "";
+  }
+});
 
-        if (botom.classList.contains('active')) {
-            botom.setAttribute('name', 'checkmark-circle-outline');
-            botom.style.color = '#39eb39'
-            span.style = 'color: #39eb39'
-        }else{
-            botom.setAttribute('name', 'ellipse-outline');
-            botom.style.color = 'white'
-            span.style = 'color: red'
-        }
-    }
-    
-    icon.forEach((boton, id)=>{
-        boton.addEventListener('click', ()=>{
-            changeIcon(id)
-        })
+const Eliminar = ()=>{
+    const btnEliminar = document.createElement("ion-icon");
+    btnEliminar.setAttribute("name", "trash-outline");
+  
+    btnEliminar.addEventListener('click', ()=>{
+        const item = btnEliminar.parentElement;
+        item.setAttribute('class', 'animate__animated animate__fadeOutUp')
+        console.log(item);
+        lista.removeChild(item)
     })
+    return btnEliminar
 }
 
-todosIconos()
+const tacharTarea =()=>{
+    const check = document.createElement("ion-icon");
+    check.setAttribute("name", "ellipse-outline");
+    check.className = 'check'
+    check.addEventListener('click', ()=>{
+        check.classList.toggle('active')
+
+        if (check.classList.contains('active')) {
+            check.setAttribute('name', 'checkmark-circle-outline')
+            check.style = 'color: #3DD23D'
+        }else{
+            check.setAttribute('name', 'ellipse-outline')
+            check.style = 'color: white'
+        }
+    })
+    return check
+}
