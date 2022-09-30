@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #f8bf47, #faa92e, #fb9217, #fd7803, #fe5900, #fe5900, #fe5900, #fe5900, #fd7803, #fb9217, #faa92e, #f8bf47);
+}
+
+section{
+    width: 30em;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 0 25px -10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right bottom, #fe5900, #fd7100, #fc850c, #fb981d, #faa92e, #faa92e, #faa92e, #faa92e, #fb981d, #fc850c, #fd7100, #fe5900);
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    padding-right: 45px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.input-container{
+    margin: 15px 0;
+    position: relative;
+}
+
+h6{
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.plus{
+    position: absolute;
+    top: 2.4px;
+    right: 5px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #fe5900;
+}
+
+input::placeholder{
+    color: gray;
+    font-size: 18px;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 0 25px -10px black;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+ul li ion-icon{
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+p{
+    font-size: 18px;
+}
